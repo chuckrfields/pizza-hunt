@@ -24,6 +24,12 @@ Enter recipes and/or submit comments or reply to comments
 
 https://blooming-dusk-61186.herokuapp.com/
 
+## Mock-Up
+
+The following image shows the web application's appearance and functionality:
+
+![pizza hunt demo](./assets/images/screenshot.png)
+
 
 ## License
 
