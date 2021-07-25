@@ -28,7 +28,7 @@ https://blooming-dusk-61186.herokuapp.com/
 
 The following image shows the web application's appearance and functionality:
 
-![pizza hunt demo](./assets/images/screenshot.png)
+![pizza hunt demo](./public/assets/images/screenshot.png)
 
 
 ## License
