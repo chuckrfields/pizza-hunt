@@ -6,6 +6,12 @@ const pizzaController = {
     // get all pizzas
     getAllPizza(req, res) {
         Pizza.find({})
+        .populate({  //  chain the .populate() method onto your query to populate comments
+            path: 'comments',
+            select: '-__v'  // The minus sign - in front of the field indicates that we don't want it to be returned. If we didn't have it, it would mean that it would return only the __v field.
+        })
+        .select('-__v')
+        .sort({ _id: -1 }) // sort in DESC order by the _id value
         .then(dbPizzaData => res.json(dbPizzaData))
         .catch(err => {
             console.log(err);
@@ -16,6 +22,11 @@ const pizzaController = {
     // get pizza by id
     getPizzaById({ params }, res) {
         Pizza.findOne({ _id: params.id })
+        .populate({  //  chain the .populate() method onto your query to populate comments
+            path: 'comments',
+            select: '-__v'  // The minus sign - in front of the field indicates that we don't want it to be returned. If we didn't have it, it would mean that it would return only the __v field.
+        })
+        .select('-__v')
         .then(dbPizzaData => {
             // if no pizza found, send 404
             if (!dbPizzaData) {
